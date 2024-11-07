@@ -1,6 +1,6 @@
 package org.abigotado.app.enums;
 
-enum FuelType {
+public enum FuelType {
     GASOLINE,
     DIESEL,
     KEROSENE,
