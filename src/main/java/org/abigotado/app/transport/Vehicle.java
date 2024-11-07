@@ -12,3 +12,4 @@ public sealed abstract class Vehicle permits AirVehicle, LandVehicle, RailVehicl
     public abstract void move();
     public abstract void displayInfo();
 }
+
