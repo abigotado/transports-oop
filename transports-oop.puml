@@ -1,0 +1,171 @@
+@startuml
+abstract class Vehicle
+abstract class LandVehicle
+abstract class RailVehicle
+abstract class AirVehicle
+interface FuelPowered
+interface ElectricPowered
+
+abstract class Vehicle {
+    General representation
+    of any vehicle
+    --
+    +String name
+    +double speed
+    +void move()
+    +void displayInfo()
+}
+
+interface FuelPowered {
+    Fuel-powered
+    vehicle
+    --
+    +FuelType fuelType
+    +void refuel()
+}
+
+interface ElectricPowered {
+    Electric-powered
+    vehicle
+    --
+    +void charge()
+}
+
+abstract class LandVehicle extends Vehicle {
+    Ground-based
+    vehicle
+    --
+    +EngineType engineType
+}
+
+abstract class RailVehicle extends Vehicle {
+    Rail-based
+    vehicle
+    --
+    +EngineType engineType
+}
+
+abstract class AirVehicle extends Vehicle {
+    Air-based
+    vehicle
+    --
+    +EngineType engineType
+}
+
+
+class Bus extends LandVehicle implements FuelPowered {
+    Bus
+    --
+    +EngineType engineType
+    +FuelType fuelType
+
+    +void move()
+    +void displayInfo()
+    +FuelType getFuelType()
+    +void refuel()
+}
+
+class Car extends LandVehicle implements FuelPowered {
+    Car
+    --
+    +EngineType engineType
+    +FuelType fuelType
+
+    +void move()
+    +void displayInfo()
+    +FuelType getFuelType()
+    +void refuel()
+}
+
+class Trolleybus extends LandVehicle implements ElectricPowered {
+    Trolleybus
+    --
+    +EngineType engineType
+
+    +void move()
+    +void displayInfo()
+    +void charge()
+}
+
+class ExpressTrain extends RailVehicle implements FuelPowered {
+    Express Train
+    --
+    +EngineType engineType
+    +FuelType fuelType
+
+    +void move()
+    +void displayInfo()
+    +FuelType getFuelType()
+    +void refuel()
+}
+
+class Metro extends RailVehicle implements ElectricPowered {
+    Metro
+    --
+    +EngineType engineType
+
+    +void move()
+    +void displayInfo()
+    +void charge()
+}
+
+class Tram extends RailVehicle implements ElectricPowered {
+    Tram
+    --
+    +EngineType engineType
+
+    +void move()
+    +void displayInfo()
+    +void charge()
+}
+
+class Airplane extends AirVehicle implements FuelPowered {
+    Airplane
+    --
+    +EngineType engineType
+    +FuelType fuelType
+
+    +void move()
+    +void displayInfo()
+    +FuelType getFuelType()
+    +void refuel()
+}
+
+class Helicopter extends AirVehicle implements FuelPowered {
+    Helicopter
+    --
+    +EngineType engineType
+    +FuelType fuelType
+
+    +void move()
+    +void displayInfo()
+    +FuelType getFuelType()
+    +void refuel()
+}
+
+class AirBalloon extends AirVehicle {
+    Air Balloon
+    --
+    +EngineType engineType
+
+    +void move()
+    +void displayInfo()
+}
+
+enum EngineType {
+    INTERNAL_COMBUSTION,
+    ELECTRIC,
+    TURBOPROP,
+    JET,
+    NONE
+}
+
+enum FuelType {
+    GASOLINE,
+    DIESEL,
+    KEROSENE,
+    ELECTRICITY,
+    NONE
+}
+
+@enduml
