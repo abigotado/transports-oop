@@ -12,24 +12,20 @@ sealed abstract class RailVehicle extends Vehicle permits Metro {
     }
 }
 
- final class Metro extends RailVehicle implements ElectricPowered {
+final class Metro extends RailVehicle implements ElectricPowered {
     public Metro(String name, double speed) {
         super(name, speed, EngineType.ELECTRIC);
     }
 
-    @Override
-    public void charge() {
+    @Override public void charge() {
         System.out.println("Charging the metro train.");
     }
 
-    @Override
-    public void move() {
+    @Override public void move() {
         System.out.println("The metro is moving underground.");
     }
 
-    @Override
-    public void displayInfo() {
-        System.out.printf("Metro: %s, Speed: %.2f km/h, Engine: %s%n",
-                          name, speed, engineType);
+    @Override public void displayInfo() {
+        System.out.printf("Metro: %s, Speed: %.2f km/h, Engine: %s%n", name, speed, engineType);
     }
 }
