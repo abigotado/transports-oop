@@ -38,7 +38,37 @@ final class Airplane extends AirVehicle implements FuelPowered {
 
     @Override
     public void displayInfo() {
-        System.out.printf("Transport: %s, Speed: %.2f km/h, Engine: %s, Fuel: %s%n",
+        System.out.printf("Airplane: %s, Speed: %.2f km/h, Engine: %s, Fuel: %s%n",
+                          name, speed, engineType, fuelType);
+    }
+}
+
+final class Helicopter extends AirVehicle implements FuelPowered {
+    private final FuelType fuelType;
+
+    public Helicopter(String name, double speed) {
+        super(name, speed, EngineType.TURBOPROP);
+        this.fuelType = FuelType.KEROSENE;
+    }
+
+    @Override
+    public FuelType getFuelType() {
+        return fuelType;
+    }
+
+    @Override
+    public void refuel() {
+        System.out.println("Refueling the helicopter with kerosene.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("The helicopter is hovering in the air.");
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.printf("Helicopter: %s, Speed: %.2f km/h, Engine: %s, Fuel: %s%n",
                           name, speed, engineType, fuelType);
     }
 }

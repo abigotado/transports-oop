@@ -35,7 +35,7 @@ final class Car extends LandVehicle implements FuelPowered {
     }
 
     @Override public void displayInfo() {
-        System.out.printf("Vehicle: %s, Speed: %.2f km/h, Engine: %s, Fuel: %s%n", name, speed, engineType, fuelType);
+        System.out.printf("Car: %s, Speed: %.2f km/h, Engine: %s, Fuel: %s%n", name, speed, engineType, fuelType);
     }
 }
 
@@ -60,7 +60,7 @@ final class Bus extends LandVehicle implements FuelPowered {
     }
 
     @Override public void displayInfo() {
-        System.out.printf("Vehicle: %s, Speed: %.2f km/h, Engine: %s, Fuel: %s%n", name, speed, engineType, fuelType);
+        System.out.printf("Bus: %s, Speed: %.2f km/h, Engine: %s, Fuel: %s%n", name, speed, engineType, fuelType);
     }
 }
 
@@ -78,6 +78,6 @@ final class Trolleybus extends LandVehicle implements ElectricPowered {
     }
 
     @Override public void displayInfo() {
-        System.out.printf("Vehicle: %s, Speed: %.2f km/h, Engine: %s", name, speed, engineType);
+        System.out.printf("Trolleybus: %s, Speed: %.2f km/h, Engine: %s", name, speed, engineType);
     }
 }
