@@ -1,5 +1,5 @@
 package org.abigotado.app.interfaces;
 
-interface ElectricPowered {
+public interface ElectricPowered {
     void charge();
 }
